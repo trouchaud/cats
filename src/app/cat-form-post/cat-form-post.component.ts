@@ -26,8 +26,7 @@ export class CatFormPostComponent implements OnInit {
       description: this.arr.description
     };
 
-    createCard(content);
-    this.router.navigateByUrl('/');
+    createCard(content).then(this.router.navigateByUrl('/'));
   }
 
 }
