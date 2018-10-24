@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { getAllCards } from '../../data-service.js';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cat-card-list',
@@ -10,7 +11,7 @@ export class CatCardListComponent implements OnInit {
 
   cats = [];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     getAllCards().then(this.setCats.bind(this));
@@ -21,7 +22,7 @@ export class CatCardListComponent implements OnInit {
   }
 
   btnClick = function() {
-    this.router.navigate(['/cat']);
+    this.router.navigateByUrl('/cat');
   };
 
 }
