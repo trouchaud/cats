@@ -7,7 +7,7 @@ const initialCards = [
   },
   {
     id: 2,
-    title: 'Random cat card',
+    title: 'Random cat card 2',
     imageUrl: 'https://cataas.com/cat/says/Hello?width=250&height=200',
     description: 'That card shows a random cat image with a text !'
   }

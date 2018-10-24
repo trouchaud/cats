@@ -17,7 +17,7 @@ export class CatFormPostComponent implements OnInit {
 
   arr: any[]=[];
 
-  onSubmit(form: NgForm) {
+  onSubmit(form: *NgForm) {
     this.arr = form.value;
 
     var content = {

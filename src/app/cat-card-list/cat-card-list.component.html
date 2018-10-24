@@ -4,6 +4,7 @@
 
   <div class="card-group">
     <app-cat-card *ngFor="let cat of cats"
+                       [id]="cat.id"
                        [title]="cat.title"
                        [imageUrl]="cat.imageUrl"
                        [description]="cat.description"></app-cat-card>

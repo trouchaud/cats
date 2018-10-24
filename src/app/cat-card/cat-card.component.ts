@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { deleteCard } from '../../data-service.js';
 
 @Component({
   selector: 'app-cat-card',
@@ -7,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CatCardComponent implements OnInit {
 
+  @Input() id: number = 0;
   @Input() title: string = "default";
   @Input() description: string = "default";
   @Input() imageUrl: string = "default";
@@ -15,5 +17,10 @@ export class CatCardComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  btnClickDel = function(id) {
+    //alert(id);
+    deleteCard(id);
+  };
 
 }
