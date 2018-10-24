@@ -1,0 +1,12 @@
+<section>
+  <h2>Cat card list</h2>
+  <hr />
+
+  <div class="card-group">
+    <app-cat-card *ngFor="let cat of cats"
+                       [title]="cat.title"
+                       [imageUrl]="cat.imageUrl"
+                       [description]="cat.description"></app-cat-card>
+  </div>
+  <button class="btn btn-lg btn-danger circle add" (click)="btnClick();"><i class="fas fa-plus"></i></button>
+</section>
