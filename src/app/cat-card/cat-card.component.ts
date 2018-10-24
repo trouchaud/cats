@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { deleteCard } from '../../data-service.js';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cat-card',
@@ -13,14 +14,13 @@ export class CatCardComponent implements OnInit {
   @Input() description: string = "default";
   @Input() imageUrl: string = "default";
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   btnClickDel = function(id) {
-    //alert(id);
-    deleteCard(id);
+    deleteCard(id).then(this.router.navigateByUrl('/'));
   };
 
 }
