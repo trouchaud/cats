@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { createCard } from '../../data-service.js';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cat-form-post',
@@ -8,7 +9,7 @@ import { createCard } from '../../data-service.js';
 })
 export class CatFormPostComponent implements OnInit {
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
@@ -25,9 +26,8 @@ export class CatFormPostComponent implements OnInit {
       description: this.arr.description
     };
 
-    console.log(content);
-
     createCard(content);
+    this.router.navigateByUrl('/');
   }
 
 }
