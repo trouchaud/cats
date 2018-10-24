@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { createCard } from '../../data-service.js';
 
 @Component({
   selector: 'app-cat-form-post',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatFormPostComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+
+  arr: any[]=[];
+
+  onSubmit(form: NgForm) {
+    this.arr = form.value;
+
+    var content = {
+      title: this.arr.title,
+      imageUrl: this.arr.url,
+      description: this.arr.description
+    };
+
+    console.log(content);
+
+    createCard(content);
   }
 
 }
